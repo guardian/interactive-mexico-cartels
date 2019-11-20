@@ -1,0 +1,27 @@
+@import "mq";
+@import "fonts";
+@import "palette";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+.element-atom, .interactive-atom {
+    margin: 0 !important;
+}
+
+
+[class="Beltrán Leyva"]{fill:red;}
+[class="Caballeros Templarios"]{fill:orange;}
+[class="Colima"]{fill:orange;}
+[class="Familia Michoacana"]{fill:black;}
+[class="Golfo"]{fill:brown;}
+[class="Guadalajara"]{fill:grey;}
+[class="Jalisco Nueva Generación"]{fill:blue;}
+[class="Juárez"]{fill:purple;}
+[class="Milenio"]{fill:green;}
+[class="Oaxaca "]{fill:$news-red;}
+[class="Sinaloa"]{fill:$inverted-orange;}
+[class="Tijuana"]{fill:black;}
+[class="Zetas"]{fill:#dae4e7;}
