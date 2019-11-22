@@ -26,3 +26,28 @@
 [class="Sinaloa"]{fill:$inverted-orange;}
 [class="Tijuana"]{fill:black;}
 [class="Zetas"]{fill:#dae4e7;}
+
+.scroll-inner{
+	display: flex;
+	justify-content: end;
+}
+
+.scroll-inner{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	.date, svg{
+		align-self: end;
+	}
+
+	.date{
+		width: 50%;
+	}
+}
+
+	
+
+.scroll-text__inner{
+	height: 40vh;
+}

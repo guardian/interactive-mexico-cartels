@@ -14,22 +14,9 @@ let year = '1976-1980'
 d3.select(".date")
 .html(year)
 
-/*Object.getOwnPropertyNames(cartelsData[0]).map((o,i) => {
-  if(i > 3){
-    d3.select(".buttons")
-    .append("button")
-    .attr("type","button")
-    .attr("class","btn-btn")
-    .append("div")
-    .attr("class","label")
-    .text(o)
-    .on('click', d => updateDorling(o))
-  }
-})*/
+let isMobile = window.matchMedia('(max-width: 420px)').matches;
 
-let cont = 0;
-
-let width = $(".scroll-inner").getBoundingClientRect().width;
+let width = isMobile ? $(".scroll-inner").getBoundingClientRect().width : $(".scroll-inner").getBoundingClientRect().width / 2;
 let height = width * 3 / 5;
 
 let svg = d3.select(".scroll-inner")
@@ -54,7 +41,7 @@ let path = d3.geoPath()
 
 let radius = d3.scaleSqrt()
 .domain([0, 140])
-.range([0, 100]);
+.range([0, 50]);
 
 projection.fitExtent([[20, 20], [width, height]], topojson.feature(map, map.objects.mexico));
 
@@ -158,6 +145,7 @@ Object.getOwnPropertyNames(cartelsData[0]).map((o,i) => {
     div.html(
             '<div class="scroll-text__div">' +
               '<p>'+ o +'</p>' +
+              '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula eu magna luctus venenatis. Vestibulum eu auctor enim, nec porttitor turpis. Praesent varius varius justo sit amet varius. Proin sed mauris eros. Nunc ut hendrerit felis. Quisque a neque et quam pharetra congue. Ut eros tellus, malesuada in dignissim sit amet, congue non augue. Sed cursus libero lectus, ac semper leo accumsan quis. Vestibulum ornare malesuada odio, vitae rhoncus mauris cursus ac. Curabitur quam nisi, scelerisque a lobortis nec, hendrerit at dui. Nullam lacinia lacinia magna vel dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras aliquet lacus eu efficitur tempor. </p>' +
             '</div>'
             )
 
@@ -166,8 +154,8 @@ Object.getOwnPropertyNames(cartelsData[0]).map((o,i) => {
 
 const scrolly = new ScrollyTeller({
     parent: document.querySelector("#scrolly-1"),
-    triggerTop: 1/2, // percentage from the top of the screen that the trigger should fire
-    triggerTopMobile: 0.5,
+    triggerTop: 1/3, // percentage from the top of the screen that the trigger should fire
+    triggerTopMobile: 0.7,
     transparentUntilActive: true
 });
 
